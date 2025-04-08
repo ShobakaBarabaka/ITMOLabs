@@ -1,0 +1,28 @@
+ORG 0x36B
+arr_first_elem: WORD 0x0384 
+arr_last_elem: WORD 0xA000  
+arr_length: WORD 0x4000     
+result: WORD 0xE000 
+START:
+    LD #0x80
+    DEC
+    SWAB
+    ST result
+    LD #0x05
+    ST arr_length
+    LD arr_first_elem
+    ST arr_last_elem
+    repeat: LD (arr_last_elem)+
+    ROR 
+    BHIS c_is_1
+    ROR
+    BHIS c_is_1
+    ROL
+    ROL
+    CMP result
+    BGE c_is_1
+    ST result
+    c_is_1: LOOP $arr_length
+    JUMP repeat
+    HLT
+arr: WORD 0xF700, 0x1800, 0x4378, 0x0D00, 0xD37B
