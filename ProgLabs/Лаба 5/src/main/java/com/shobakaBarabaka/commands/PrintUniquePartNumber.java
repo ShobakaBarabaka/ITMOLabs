@@ -17,7 +17,7 @@ public final class PrintUniquePartNumber extends Command {
      * Constructs a new {@link PrintUniquePartNumber} command.
      */
     PrintUniquePartNumber() {
-        super("print_unique_part_numbers", EMPTY_ARGS, "prints all unique part numbers in collection", 1);
+        super("print_unique_part_numbers", EMPTY_ARGS, "prints all unique part numbers in collection");
     }
 
     /**

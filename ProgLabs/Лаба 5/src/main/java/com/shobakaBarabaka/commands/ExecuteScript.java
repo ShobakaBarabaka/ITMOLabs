@@ -3,9 +3,10 @@ package com.shobakaBarabaka.commands;
 import com.shobakaBarabaka.IO.file.BufferedFileWorker;
 import com.shobakaBarabaka.IO.transfer.Request;
 import com.shobakaBarabaka.IO.transfer.Response;
+import com.shobakaBarabaka.processor.Handler;
+
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collections;
 
 /**
@@ -27,18 +28,21 @@ public final class ExecuteScript extends Command {
     @Override
     public Response execute(final Request request) {
         if (request.args() == null || request.args().isEmpty()) {
-            return new Response("No file name provided.");
+            return new Response("No file name provided");
         }
-
-        final Path path = Paths.get(request.args().getFirst());
-        if (!path.toFile().exists()) return new Response("File not found.");
-        if (!path.toFile().canRead()) return new Response("Not enough rights to read file.");
+        final Path path = Path.of(request.args().getFirst());
+        if (!path.toFile().exists()) return new Response("File not found");
+        if (!path.toFile().isFile()) return new Response("File not found");
+        if (!path.toFile().canRead()) return new Response("Not enough rights to read file");
 
         try (BufferedFileWorker file = new BufferedFileWorker(path)) {
             StringBuilder script = new StringBuilder();
             while (file.ready()) {
                 script.append(file.read()).append(System.lineSeparator());
             }
+            script.append("end_script");
+            Handler.runningScripts.add(path.toString());
+            System.out.println("Scrip starts");
             return new Response(
                     "Script loaded from file %s".formatted(path.toString()),
                     Collections.emptyList(),

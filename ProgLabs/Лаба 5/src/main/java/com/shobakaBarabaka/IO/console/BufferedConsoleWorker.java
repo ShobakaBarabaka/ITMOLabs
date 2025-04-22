@@ -1,15 +1,21 @@
 package com.shobakaBarabaka.IO.console;
 
 import java.io.*;
+import java.nio.file.Path;
 
 /**
  * Class for reading and writing to the console
  */
 public final class BufferedConsoleWorker implements AutoCloseable {
 
-    private final BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
+    private BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
     private final BufferedWriter consoleWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
+
+    public BufferedConsoleWorker(String consoleReader) throws FileNotFoundException {
+        this.consoleReader = new BufferedReader(new FileReader(consoleReader));
+    }
+    public BufferedConsoleWorker(){}
     /**
      * Reads a line of input from the console
      * @return the string entered by the user

@@ -73,6 +73,9 @@ public class InputUtil {
         } catch (InterruptedException e) {
             throw e;
         } catch (Exception ex) {
+            if (ex instanceof NullPointerException) {
+                return false;
+            }
             io.write(ex.getMessage() + System.lineSeparator());
             return true;
         }

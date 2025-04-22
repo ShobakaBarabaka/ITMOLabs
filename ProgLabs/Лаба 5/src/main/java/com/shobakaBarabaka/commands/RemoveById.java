@@ -15,7 +15,7 @@ public final class RemoveById extends Command {
      * Constructs a new {@link RemoveById} command
      */
     RemoveById() {
-        super("remove_by_id", new String[]{"id"}, "remove element from collection with this id", 1);
+        super("remove_by_id", new String[]{"id"}, "remove element from collection with this id");
     }
 
     /**
@@ -35,7 +35,7 @@ public final class RemoveById extends Command {
         }
         CollectionManager.getInstance().list().removeIf(product -> Objects.equals(product.getId(), targetId));
 
-        return new Response("Person removed. Removed element:");
+        return new Response("Person removed");
     }
 
 }

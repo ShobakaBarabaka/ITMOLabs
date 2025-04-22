@@ -54,4 +54,14 @@ public class Organization {
     public void setType(OrganizationType type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Organization{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

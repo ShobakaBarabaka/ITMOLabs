@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.time.LocalDate;
 import java.time.ZoneId;
-
+import java.lang.Float.*;
 
 
 /**
@@ -154,6 +154,7 @@ public class Product implements Serializable, Comparable<Product>{
     public void setPrice(Float price) {
         if (price <= 0) throw new IllegalArgumentException("price must be greater than 0");
         this.price = price;
+
     }
 
 

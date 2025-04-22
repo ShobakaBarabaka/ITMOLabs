@@ -6,13 +6,13 @@ import com.shobakaBarabaka.IO.transfer.Response;
 /**
  * This command exits the program
  */
-public final class Exit extends Command {
+public final class ScriptEnding extends Command {
 
     /**
      * Constructs a new {@link Exit} command
      */
-    Exit() {
-        super("exit", "exits the program");
+    ScriptEnding() {
+        super("end_script", "ends script");
     }
 
     /**
@@ -21,7 +21,6 @@ public final class Exit extends Command {
      */
     @Override
     public Response execute(final Request request) {
-        System.exit(0);
-        return new Response("");
+        return new Response("The end of the script");
     }
 }

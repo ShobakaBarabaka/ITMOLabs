@@ -18,7 +18,7 @@ public final class MaxByPrice extends Command {
      * Constructs a new {@link MaxByPrice} command.
      */
     MaxByPrice() {
-        super("max_by_price", EMPTY_ARGS, "prints any element with highest price", 1);
+        super("max_by_price", EMPTY_ARGS, "prints any element with highest price");
     }
 
     /**

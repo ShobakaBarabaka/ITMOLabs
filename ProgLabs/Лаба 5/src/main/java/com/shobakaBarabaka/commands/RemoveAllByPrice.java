@@ -16,7 +16,7 @@ public final class RemoveAllByPrice extends Command {
      * Constructs a new {@link RemoveAllByPrice} command
      */
     RemoveAllByPrice() {
-        super("remove_all_by_price", new String[]{"price"}, "removes all products with given price", 1);
+        super("remove_all_by_price", new String[]{"price"}, "removes all products with given price");
     }
 
     /**
@@ -36,7 +36,7 @@ public final class RemoveAllByPrice extends Command {
         }
         CollectionManager.getInstance().list().removeIf(product -> Objects.equals(product.getPrice(), targetPrice));
 
-        return new Response("Person removed. Removed element:");
+        return new Response("Persons removed");
     }
 
 }

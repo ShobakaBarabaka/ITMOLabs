@@ -14,19 +14,17 @@
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/ID_SEQ" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/console/BufferedConsoleWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/deque/DequeWorker.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/file/BufferedFileWorker.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/file/FilesPaths.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/parser/DateTypeAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/parser/Deserializer.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/parser/JsonFormatter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/parser/Root.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/script/ScriptWorker.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/transfer/Request.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/IO/transfer/Response.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/ORG_ID_SEQ" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/chat/Director.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/chat/Handler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/collection/CollectionManager.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/collection/Coordinates.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/collection/IdGenerator.java" afterDir="false" />
@@ -49,11 +47,16 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/commands/RemoveFirst.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/commands/RemoveHead.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/commands/Save.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/commands/ScriptEnding.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/commands/Show.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/commands/Update.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/processor/Director.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/processor/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/script1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/script2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/script3" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shobakaBarabaka/utility/InputUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +90,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/utkae/IdeaProjects/5labm/src/main/java/com/shobakaBarabaka"
+    "last_opened_file_path": "C:/Users/utkae/IdeaProjects/4lab",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">

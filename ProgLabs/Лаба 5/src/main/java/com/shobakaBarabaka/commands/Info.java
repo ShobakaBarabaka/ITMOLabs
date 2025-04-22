@@ -32,9 +32,13 @@ public final class Info extends Command {
         List<Product> collection = CollectionManager.getInstance().list();
         LocalDate initDate = CollectionManager.getInstance().list().getLast().getCreationDate();
         int quantity = collection.size();
-        return new Response(String.format("Collection: %s," + '\n' +
-                "Initialization Date: %s," + '\n' +
-                "Quantity: %d," + '\n' +
-                "Type: %s", collection, initDate, quantity, collection.getClass()));
+        return new Response(String.format("""
+                Collection: %s,
+                \
+                Initialization Date: %s,
+                \
+                Quantity: %d,
+                \
+                Type: %s""", collection, initDate, quantity, collection.getClass()));
     }
 }

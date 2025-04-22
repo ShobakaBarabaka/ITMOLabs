@@ -1,16 +1,16 @@
 package com.shobakaBarabaka.processor;
 
 import com.shobakaBarabaka.IO.console.BufferedConsoleWorker;
-import com.shobakaBarabaka.IO.script.DequeWorker;
+import com.shobakaBarabaka.IO.script.ScriptWorker;
 import com.shobakaBarabaka.IO.transfer.Request;
 import com.shobakaBarabaka.IO.transfer.Response;
 import com.shobakaBarabaka.collection.CollectionManager;
 import com.shobakaBarabaka.collection.Product;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 import static com.shobakaBarabaka.utility.InputUtil.get;
 
@@ -21,8 +21,9 @@ import static com.shobakaBarabaka.utility.InputUtil.get;
  */
 public final class Handler implements Runnable {
     private final BufferedConsoleWorker console;
-    private final DequeWorker script;
+    private final ScriptWorker script;
 
+    public static final HashSet<String> runningScripts = new HashSet<>();
     /**
      * Creates a new {@link Handler} instance
      * @param console the console worker
@@ -30,7 +31,7 @@ public final class Handler implements Runnable {
      */
     public Handler(
             final BufferedConsoleWorker console,
-            final DequeWorker script
+            final ScriptWorker script
     ) {
         this.console = console;
         this.script = script;
@@ -48,10 +49,21 @@ public final class Handler implements Runnable {
             String line;
             while ((line = console.read(" > ")) != null) {
                 handle(line);
-                while (!script.ready()) handle(script.read());
+
+                while (!script.ready()){/*
+                    String[] exec = Objects.requireNonNull(script.read()).split(" ");
+                    Path executedFile = Path.of(Arrays.stream(exec).toList().getLast());
+                    if (Objects.equals(Arrays.stream(exec).toList().getFirst(), "script_ending")) {
+                        //System.out.printf("AAAAAAA %s%n", runningScripts);
+                        runningScripts.remove(Arrays.stream(exec).toList().getLast());
+                        //System.out.printf("AAAAAAA %s%n", runningScripts);
+                    }*/
+                    handle(script.read());
+                }
+
             }
         } catch (Exception e) {
-            console.writeFormatted("error: %s%n", e.getMessage());
+            console.writeln(e.getMessage());
         }
     }
 
@@ -72,6 +84,9 @@ public final class Handler implements Runnable {
         if (response.message() != null && !response.message().isBlank()) console.writeln(response.message());
         if (response.products() != null && !response.products().isEmpty())
             response.products().stream().map(Product::toString).forEach(console::writeln);
+        if (response.script() != null && !response.script().isEmpty()) {
+            script.insert(response.script());
+        }
     }
 
     /**

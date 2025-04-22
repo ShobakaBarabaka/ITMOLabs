@@ -25,7 +25,8 @@ public final class Active {
             new RemoveHead(),
             new Save(),
             new Show(),
-            new Update()
+            new Update(),
+            new ScriptEnding()
     );
 
     private Active() {
